@@ -6,10 +6,6 @@ public class Reservation {
     private int numberOfNight;
     private boolean isWeekend;
 
-
-
-
-
 // Generate constructor
     public Reservation(String roomType, int numberOfNight, boolean isWeekend) {
         this.roomType = roomType;
@@ -21,24 +17,26 @@ public class Reservation {
     //  private double price; price depend on the room-type and number of night
     public double getPrice(){
         double price;
-      if(roomType.equalsIgnoreCase("king"){
+      if(roomType.equalsIgnoreCase("king")){
           price = 139.00;
       }
       else if (roomType.equalsIgnoreCase ("double")){
             price = 124.00;
       }
       else{
-          price = 0;
+          price = 0.0;
         }
       if (isWeekend){
           price = price * 1.10;
       }
+      return price;
     }
     public  double getReservationTotal(){
     // Reservation total also depend on the price and weekend 10%.(isWeekend = true total will be price * 0.1)
-        getPrice() * numberOfNight;
+       return getPrice() * numberOfNight;
 
     }
+
 //Generate getter and setter
     public String getRoomType() {
         return roomType;

@@ -13,13 +13,9 @@ public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty)
     this.isDirty = isDirty;
 }
 
-public boolean getIsAvailable() {
-    this.isOccupied = false ;
-    this.isDirty = false;
-    return getIsAvailable();
-
+public boolean IsAvailable() {
+    return !isOccupied && !isDirty;
 }
-
 
 public int getNumberOfBeds() {
 return numberOfBeds;
@@ -36,7 +32,6 @@ return isOccupied;
 public boolean isDirty() {
 return isDirty;
 }
-
 
 
     }

@@ -6,58 +6,62 @@ public class Employee {
     private String name;
     private String department;
     private double payRate;
+    private int hoursWorked;
 
 
 // Generate constructor
 
-    public Employee(int id, String name, String department, double payRate) {
+    public Employee(int id, String name, String department, double payRate , int hoursWorked) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.payRate = payRate;
+        this.hoursWorked = hoursWorked;
     }
 // Drived getter
-    public double  getTotalPay(){
-
-    }
-    public int getRegularHours(){
-
+    public double  getRegularHours(){
+        if(hoursWorked <= 40){
+            return hoursWorked;}
+        else{
+            return 40;
+        }
     }
     public int getOverTimeHours(){
+        if(hoursWorked > 40){
+            return hoursWorked - 40;
+        }else{
+            return 0;
+        }
 
     }
+    public int getTotalPay(){
+        double regularPay = getRegularHours() * payRate;
+        double overtimePay = getOverTimeHours() * payRate * 1.5;
+        return regularPay + overtimePay;
 
+    }
 
 // Generate getter and setter
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public double getPayRate() {
         return payRate;
     }
-
-    public void setPayRate(double payRate) {
-        this.payRate = payRate;
+    public int getHoursWorked() {
+        return hoursWorked;
     }
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
 }
