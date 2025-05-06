@@ -19,19 +19,19 @@ public boolean IsAvailable() {
 // Generate getter and delete what not used later.
 
 public int getNumberOfBeds() {
-return numberOfBeds;
+return this.numberOfBeds;
 }
 
 public double getPrice() {
-return price;
+return this.price;
 }
 
 public boolean isOccupied() {
-return isOccupied;
+return this.isOccupied;
 }
 
 public boolean isDirty() {
-return isDirty;
+return this.isDirty;
 }
 
     }

@@ -33,14 +33,14 @@ public class Reservation {
     }
     public  double getReservationTotal(){
     // Reservation total also depend on the price and weekend 10%.(isWeekend = true total will be price * 0.1)
-       return getPrice() * numberOfNight;
+       return this.getPrice() * numberOfNight;
 
     }
 
 //Generate getter and setter. delete what not used later.
 
     public String getRoomType() {
-        return roomType;
+        return this.roomType;
     }
 
     public void setRoomType(String roomType) {
@@ -48,7 +48,7 @@ public class Reservation {
     }
 
     public int getNumberOfNight() {
-        return numberOfNight;
+        return this.numberOfNight;
     }
 
     public void setNumberOfNight(int numberOfNight) {
@@ -56,7 +56,7 @@ public class Reservation {
     }
 
     public boolean isWeekend() {
-        return isWeekend;
+        return this.isWeekend;
     }
 
     public void setWeekend(boolean weekend) {

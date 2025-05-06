@@ -21,41 +21,41 @@ public class Employee {
 // Drived getter
     public double  getRegularHours(){
         if(hoursWorked <= 40){
-            return hoursWorked;}
+            return this.hoursWorked;}
         else{
             return 40;
         }
     }
-    public int getOverTimeHours(){
+    public double getOverTimeHours(){
         if(hoursWorked > 40){
-            return hoursWorked - 40;
+            return this.hoursWorked - 40;
         }else{
             return 0;
         }
     }
-    public int getTotalPay(){
-        double regularPay = getRegularHours() * payRate;
-        double overtimePay = getOverTimeHours() * payRate * 1.5;
-        return (int) (regularPay + overtimePay);
+    public double getTotalPay(){
+        double regularPay = this.getRegularHours() * payRate;
+        double overtimePay = this.getOverTimeHours() * payRate * 1.5;
+        return regularPay + overtimePay;
     }
 // Generate getter and setter can delete what not used later.
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getDepartment() {
-        return department;
+        return this.department;
     }
 
     public double getPayRate() {
-        return payRate;
+        return this.payRate;
     }
     public int getHoursWorked() {
-        return hoursWorked;
+        return this.hoursWorked;
     }
     public void setHoursWorked(int hoursWorked) {
         // ???????
