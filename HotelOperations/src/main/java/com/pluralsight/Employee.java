@@ -58,7 +58,11 @@ public class Employee {
         return hoursWorked;
     }
     public void setHoursWorked(int hoursWorked) {
+        // ???????
         this.hoursWorked = hoursWorked;
+    }
+    public void showHours(){
+        System.out.println("hours worked is : " + hoursWorked);
     }
 
 }

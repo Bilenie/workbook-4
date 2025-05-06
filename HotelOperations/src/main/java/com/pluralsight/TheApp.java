@@ -37,8 +37,13 @@ public class TheApp {
         Employee employeeRoom1 = new Employee(2,"Jp","Management",62.52,45);
         Employee employeeRoom2 = new Employee(1,"Bilenie","IT Department",50.60, 40);
 
-        //printing out the result
 
+        //did this to change the values of the hours worked after the first print
+
+        employeeRoom1.setHoursWorked(40);// this is how we use setter
+        employeeRoom2.setHoursWorked(45);
+
+        //printing out the result
         // get the regular hours worked.
 
         System.out.println(" The regular hour worked for employee1 is ? : " + employeeRoom1.getRegularHours());
@@ -46,7 +51,7 @@ public class TheApp {
 
         // get the hours/week worked.
 
-        System.out.println(" The  hour worked of the week for employee1 is ? : " + employeeRoom1.getHoursWorked());
+        System.out.println(" The hour worked of the week for employee1 is ? : " + employeeRoom1.getHoursWorked());
         System.out.println(" The hour worked of the week for employee2 is ? : " + employeeRoom2.getHoursWorked());
 
         // get the over time hours worked
@@ -56,8 +61,8 @@ public class TheApp {
 
         //get the  pay for the work.
 
-        System.out.println(" The  pay for employee1 is ? : " + employeeRoom1.getPayRate());
-        System.out.println(" The  pay for employee2 is ? : " + employeeRoom2.getPayRate());
+        System.out.println(" The pay for employee1 is ? : " + employeeRoom1.getPayRate());
+        System.out.println(" The pay for employee2 is ? : " + employeeRoom2.getPayRate());
 
         //get the total pay for the work.
 
@@ -78,6 +83,18 @@ public class TheApp {
 
         System.out.println(" The ID of employee1 is ? : " + employeeRoom1.getId());
         System.out.println(" The ID of employee2 is ? : " + employeeRoom2.getId());
+
+        //If we want to change the values of hours worked of employee 1 or 2 ,let's say depending on the week it changed, we use setter.
+        // Inorder for this to change the original value we need to set it before all the calculation so we should move it to line 41.
+
+        employeeRoom1.setHoursWorked(40);
+        employeeRoom2.setHoursWorked(45);
+
+//        employeeRoom1.showHours();
+//        employeeRoom2.showHours();
+
+
+
 
 
 
