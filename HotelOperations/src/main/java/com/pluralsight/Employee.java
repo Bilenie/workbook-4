@@ -7,6 +7,7 @@ public class Employee {
     private String department;
     private double payRate;
     private int hoursWorked;
+    private double startTime;
 
 
 // Generate constructor
@@ -18,7 +19,21 @@ public class Employee {
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
     }
-// Drived getter
+
+//Custom Method
+    public void punchIn(double time){
+        //this tracking the start time of work.
+        this.startTime = time;
+        System.out.printf(" This the time Employee started work : %.2fam \n" , time);
+    }
+    public void punchOut(double time){
+        //This calculating the total hours worked of the day and add it to hoursWorked. still have question about hoursWorked???
+       double timeWorked = time - startTime ;
+        this.hoursWorked += timeWorked;
+        System.out.printf(" This the time that Employee stop work : %.2f pm \n and so hours worked will be : %.2f \n " , time, timeWorked );
+    }
+
+    // Drived getter
     public double  getRegularHours(){
         if(hoursWorked <= 40){
             return this.hoursWorked;}

@@ -12,6 +12,20 @@ public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty)
     this.isOccupied = isOccupied;
     this.isDirty = isDirty;
 }
+// Custom Method
+public void checkIn(){
+     isOccupied = true;
+      isDirty = true;
+}
+public void cleanRoom(){
+   isDirty =false;
+}
+public void checkOut(){
+    isOccupied = false;
+    isDirty = true;
+
+    }
+
 //Derived getter
 public boolean IsAvailable() {
     return !this.isOccupied && !this.isDirty;
