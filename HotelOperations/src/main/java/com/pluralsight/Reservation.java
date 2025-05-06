@@ -37,7 +37,8 @@ public class Reservation {
 
     }
 
-//Generate getter and setter
+//Generate getter and setter. delete what not used later.
+
     public String getRoomType() {
         return roomType;
     }

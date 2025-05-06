@@ -32,16 +32,13 @@ public class Employee {
         }else{
             return 0;
         }
-
     }
     public int getTotalPay(){
         double regularPay = getRegularHours() * payRate;
         double overtimePay = getOverTimeHours() * payRate * 1.5;
         return (int) (regularPay + overtimePay);
-
     }
-
-// Generate getter and setter
+// Generate getter and setter can delete what not used later.
     public int getId() {
         return id;
     }

@@ -14,9 +14,10 @@ public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty)
 }
 //Derived getter
 public boolean IsAvailable() {
-    return !isOccupied && !isDirty;
+    return !this.isOccupied && !this.isDirty;
 }
-// Generate getter and setter
+// Generate getter and delete what not used later.
+
 public int getNumberOfBeds() {
 return numberOfBeds;
 }
@@ -32,7 +33,6 @@ return isOccupied;
 public boolean isDirty() {
 return isDirty;
 }
-
 
     }
 
