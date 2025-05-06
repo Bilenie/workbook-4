@@ -47,13 +47,13 @@ public class TheApp {
         //did this to change the values of the hours worked after the first print
         Employee employee3 = new Employee(102, "Taylor Smith", "HR", 20.0, 0);
 
-// Simulate punching in and out
+        // Simulate punching in and out
         employee3.punchIn(9.0);    // 9:00 AM
         employee3.punchOut(13.5);  // 1:30 PM
 
         System.out.println("Hours Worked: " + employee3.getHoursWorked());
-//        employeeRoom1.punchIn(7.00);
-//        employeeRoom1.punchOut(6.00);
+        //  employeeRoom1.punchIn(7.00);
+        //  employeeRoom1.punchOut(6.00);
 
         employeeRoom1.setHoursWorked(40);// this is how we use setter
         employeeRoom2.setHoursWorked(45);

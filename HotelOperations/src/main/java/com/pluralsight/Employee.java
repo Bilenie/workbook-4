@@ -1,5 +1,9 @@
 package com.pluralsight;
 
+
+import java.time.LocalDateTime;
+
+
 public class Employee {
 
     private int id;
@@ -7,7 +11,9 @@ public class Employee {
     private String department;
     private double payRate;
     private int hoursWorked;
-    private double startTime;
+    private double startTime; //added this attribute
+    private LocalDateTime currentDateTime = LocalDateTime.now();
+
 
 
 // Generate constructor
@@ -22,15 +28,56 @@ public class Employee {
 
 //Custom Method
     public void punchIn(double time){
-        //this tracking the start time of work.
+        //this tracking the start time of work. at some point time divide by 16.
         this.startTime = time;
         System.out.printf(" This the time Employee started work : %.2fam \n" , time);
     }
     public void punchOut(double time){
+        //validation for the time
+        if (startTime == -1) {
+            System.out.println("Error: You must punch in first.");
+            return;
+        }
         //This calculating the total hours worked of the day and add it to hoursWorked. still have question about hoursWorked???
-       double timeWorked = time - startTime ;
+       double timeWorked = time - this.startTime ;
         this.hoursWorked += timeWorked;
         System.out.printf(" This the time that Employee stop work : %.2f pm \n and so hours worked will be : %.2f \n " , time, timeWorked );
+    }
+    //Overloaded Method for punchIn and punchOut.
+
+    public void punchIn(){
+      //get the current time  what hour and minute the employee clocked in.
+        double timeClockedIn = currentDateTime.getHour();
+        double minuteClockedIn = currentDateTime.getMinute()/60;
+        double hourMinute = timeClockedIn + minuteClockedIn;
+        startTime = hourMinute;
+
+        System.out.printf("This the time Employee %s started work : %.2fam \n", name , hourMinute);
+
+    }
+    public void punchOut() {
+        //get the current time  what hour and minute the employee clocked out.
+        double timeClockedIn = currentDateTime.getHour();
+        double minuteClockedIn = currentDateTime.getMinute()/60;
+        double hourMinute = timeClockedIn + minuteClockedIn;
+
+        if (startTime == -1) {
+            System.out.println("Error: You must punch in first.");
+            return;
+        }
+        double timeWorked =hourMinute - this.startTime ;
+        this.hoursWorked += timeWorked;
+        System.out.printf(" This the time that Employee %s \n stop work : %.2f pm \n and so hours worked will be : %.2f \n ", name, hourMinute, timeWorked );
+    }
+
+    //telling it to punch me in and punch me out.
+    public void punchTimeCard(double time, boolean isPunchIn){
+        if(isPunchIn){
+            this.punchIn(time);
+        }
+        else{
+            this.punchOut(time);
+        }
     }
 
     // Drived getter
