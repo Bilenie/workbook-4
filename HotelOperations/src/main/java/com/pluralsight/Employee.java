@@ -129,4 +129,7 @@ public class Employee {
         System.out.println("hours worked is : " + hoursWorked);
     }
 
+    public double getStartTime() {
+        return startTime;
+    }
 }
