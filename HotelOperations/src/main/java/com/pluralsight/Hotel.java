@@ -27,6 +27,15 @@ public class Hotel {
         this.bookedSuites = bookedSuites;
         this.bookedBasicRooms = bookedBasicRooms;
     }
+    // Derived Getters (calculated, no private backing variables)
+    public int getAvailableSuites() {
+        return this.getNumberOfSuites() - this.getBookedSuites();
+    }
+
+    public int getAvailableRooms() {
+        return this.getNumberOfRooms() - this.getBookedBasicRooms();
+    }
+
 
     // custom method
 //if(this.isAvailable()){ this.isOccupied = true; this.isDirty = true; sout("Guest checked in.")}else{"Room is not available."}
@@ -35,7 +44,7 @@ public class Hotel {
         if (isSuite) {
             int availableSuites = getAvailableSuites();
             if (numberOfRooms <= availableSuites) {
-                bookedSuites += numberOfRooms;
+                this.bookedSuites += numberOfRooms;
                 return true;
             } else {
                 return false;
@@ -43,7 +52,7 @@ public class Hotel {
         } else {
             int availableBasicRooms = getAvailableRooms();
             if (numberOfRooms <= availableBasicRooms) {
-                bookedBasicRooms += numberOfRooms;
+                this.bookedBasicRooms += numberOfRooms;
                 return true;
             } else {
                 return false;
@@ -51,14 +60,6 @@ public class Hotel {
         }
     }
 
-    // Derived Getters (calculated, no private backing variables)
-    public int getAvailableSuites() {
-        return numberOfSuites - bookedSuites;
-    }
-
-    public int getAvailableRooms() {
-        return numberOfRooms - bookedBasicRooms;
-    }
 
 //Getter
 
