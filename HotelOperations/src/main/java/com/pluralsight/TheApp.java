@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.sql.SQLOutput;
 
 public class TheApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //****************************************************************************************************************
         //instantiating an object to test our room class
 
@@ -45,11 +45,14 @@ public class TheApp {
 
 
         //did this to change the values of the hours worked after the first print
-        Employee employee3 = new Employee(102, "Taylor Smith", "HR", 20.0, 0);
+        Employee employee3 = new Employee(102, "Taylor Smith", "HR", 20.0, 1);
 
         // Simulate punching in and out
-        employee3.punchIn(9.0);    // 9:00 AM
-        employee3.punchOut(13.5);  // 1:30 PM
+//        employee3.punchIn(9.0);    // 9:00 AM
+//        employee3.punchOut(13.5);  // 1:30 PM
+        employee3.punchIn();    // 9:00 AM
+        Thread.sleep(60000);
+        employee3.punchOut();  // 1:30 PM
 
         System.out.println("Hours Worked: " + employee3.getHoursWorked());
         //  employeeRoom1.punchIn(7.00);

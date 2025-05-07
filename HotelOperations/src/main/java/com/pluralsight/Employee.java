@@ -12,7 +12,7 @@ public class Employee {
     private double payRate;
     private int hoursWorked;
     private double startTime; //added this attribute
-    private LocalDateTime currentDateTime = LocalDateTime.now();
+//    private LocalDateTime currentDateTime = LocalDateTime.now();
 
 
 
@@ -46,9 +46,10 @@ public class Employee {
     //Overloaded Method for punchIn and punchOut.
 
     public void punchIn(){
+        LocalDateTime currentDateTime = LocalDateTime.now();
       //get the current time  what hour and minute the employee clocked in.
         double timeClockedIn = currentDateTime.getHour();
-        double minuteClockedIn = currentDateTime.getMinute()/60;
+        double minuteClockedIn = currentDateTime.getMinute()/60.00;
         double hourMinute = timeClockedIn + minuteClockedIn;
         startTime = hourMinute;
 
@@ -56,20 +57,21 @@ public class Employee {
 
     }
     public void punchOut() {
+        LocalDateTime currentDateTime = LocalDateTime.now();//.plusMinutes(1)(gap added)
         //get the current time  what hour and minute the employee clocked out.
         double timeClockedIn = currentDateTime.getHour();
-        double minuteClockedIn = currentDateTime.getMinute()/60;
+        double minuteClockedIn = currentDateTime.getMinute()/60.;//make it decimal the divisor need to be the same format as the data type the quotient we are trying to retrieve.
         double hourMinute = timeClockedIn + minuteClockedIn;
 
         if (startTime == -1) {
             System.out.println("Error: You must punch in first.");
             return;
         }
-        double timeWorked =hourMinute - this.startTime ;
+        double timeWorked = hourMinute - this.startTime ;
         this.hoursWorked += timeWorked;
         System.out.printf(" This the time that Employee %s \n stop work : %.2f pm \n and so hours worked will be : %.2f \n ", name, hourMinute, timeWorked );
+            //this.punchOut(hourMinute );
     }
-
     //telling it to punch me in and punch me out.
     public void punchTimeCard(double time, boolean isPunchIn){
         if(isPunchIn){

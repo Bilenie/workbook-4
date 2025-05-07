@@ -8,14 +8,16 @@ public class Hotel {
     private int bookedBasicRooms;
 
 
- //bookedSuites => this depend on the numberOfSuites avail.
-//bookedBasicRooms => this depend on the numberOfRooms avail.
+    //bookedSuites => this depend on the numberOfSuites avail.
+    //bookedBasicRooms => this depend on the numberOfRooms avail.
 
-// two kind of constructor
+    // two kind of constructor
     public Hotel(String name, int numberOfSuites, int numberOfRooms) {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
+        this.bookedSuites = 0;
+        this.bookedBasicRooms = 0;
     }
 
     public Hotel(String name, int numberOfSuites, int numberOfRooms, int bookedSuites, int bookedBasicRooms) {
@@ -25,9 +27,38 @@ public class Hotel {
         this.bookedSuites = bookedSuites;
         this.bookedBasicRooms = bookedBasicRooms;
     }
-// custom method
-//if(this.isAvailable()){ this.isOccupied = true; this.isDirty = true; sout("Guest checked in.")}else{"Room is not available."}
 
+    // custom method
+//if(this.isAvailable()){ this.isOccupied = true; this.isDirty = true; sout("Guest checked in.")}else{"Room is not available."}
+// Booking method
+    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
+        if (isSuite) {
+            int availableSuites = getAvailableSuites();
+            if (numberOfRooms <= availableSuites) {
+                bookedSuites += numberOfRooms;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            int availableBasicRooms = getAvailableRooms();
+            if (numberOfRooms <= availableBasicRooms) {
+                bookedBasicRooms += numberOfRooms;
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    // Derived Getters (calculated, no private backing variables)
+    public int getAvailableSuites() {
+        return numberOfSuites - bookedSuites;
+    }
+
+    public int getAvailableRooms() {
+        return numberOfRooms - bookedBasicRooms;
+    }
 
 //Getter
 
@@ -46,6 +77,7 @@ public class Hotel {
     public int getBookedSuites() {
         return bookedSuites;
     }
+
     public int getBookedBasicRooms() {
         return bookedBasicRooms;
     }
