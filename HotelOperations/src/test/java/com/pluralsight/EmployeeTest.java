@@ -25,7 +25,7 @@ class EmployeeTest {
     public void employee_whenPunchOut_should_seeAddedToHoursWorked(){
         //Arrange
         //we need a hotel/Object to actually do the test for our variable arrangement.
-        Employee employeeClockOut = new Employee(17, "Bilenie","IT",20,40);
+        Employee employeeClockOut = new Employee(17, "Bilenie","IT",20,0);
         employeeClockOut.punchIn(7.00);
 
         //Act
