@@ -11,7 +11,7 @@ class EmployeeTest {
     public void employee_whenPunchIn_should_trackTheStartTime(){
         //Arrange
         //we need a hotel/Object to actually do the test for our variable arrangement.
-        Employee employeeClockIn = new Employee(17, "Bilenie","IT",20,40);
+        Employee employeeClockIn = new Employee(17, "Bilenie","IT",20,0);
 
 
         //Act
@@ -22,7 +22,7 @@ class EmployeeTest {
 
     }
     @Test
-    public void employee_whenPunchOut_should_seeAddedToHoursWorked(){
+    public void employee_whenPunchOut_should_seeWorkedTimeAddedToHoursWorked(){
         //Arrange
         //we need a hotel/Object to actually do the test for our variable arrangement.
         Employee employeeClockOut = new Employee(17, "Bilenie","IT",20,0);
