@@ -20,7 +20,7 @@ public class NameFormatter {
         sb.append(firstName);
 
         if (!middleName.isEmpty()) {
-            sb.append(" ").append(middleName).append("");
+            sb.append(" ").append(middleName);
         }
 
         if (!suffix.isEmpty()) {
