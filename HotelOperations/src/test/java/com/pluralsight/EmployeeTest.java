@@ -13,6 +13,7 @@ class EmployeeTest {
         //we need a hotel/Object to actually do the test for our variable arrangement.
         Employee employeeClockIn = new Employee(17, "Bilenie","IT",20,40);
 
+
         //Act
         employeeClockIn.punchIn(3.00);
 
@@ -25,27 +26,15 @@ class EmployeeTest {
         //Arrange
         //we need a hotel/Object to actually do the test for our variable arrangement.
         Employee employeeClockOut = new Employee(17, "Bilenie","IT",20,40);
+        employeeClockOut.punchIn(7.00);
 
         //Act
-        employeeClockOut.punchOut(5.);
+        employeeClockOut.punchOut(15.);
 
         //Assert=> one assertion per test
-        assertEquals(5.0,employeeClockOut.getHoursWorked());
+
+        assertEquals(8.0,employeeClockOut.getHoursWorked(), 0.01);
 
     }
-//    @Test
-//    public void employee_whenPunchOut_should_seeTheStopTime(){
-//        //Arrange
-//        //we need a hotel/Object to actually do the test for our variable arrangement.
-//        Employee employeeClockOut = new Employee(17, "Bilenie","IT",20,40);
-//        double timeStart = employeeClockOut.getStartTime();
-//
-//        //Act
-//        employeeClockOut.punchOut(12.0.);
-//
-//        //Assert=> one assertion per test
-//        assertEquals(5.0,employeeClockOut.);
-
-   // }
 
 }
