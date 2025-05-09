@@ -7,6 +7,7 @@ public class Hand {
     private ArrayList<Card> cards;
 
     public Hand() {
+
         cards = new ArrayList<>();
     }
 
@@ -28,6 +29,15 @@ public class Hand {
             card.flip(); // hide the card again
         }
         return value;
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Card card : cards) {
+            sb.append(card.toString()).append(", ");
+        }
+        sb.append("Total value: ").append(getValue());
+        return sb.toString();
     }
 
 }

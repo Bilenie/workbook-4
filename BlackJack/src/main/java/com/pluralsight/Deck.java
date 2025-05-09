@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Deck {
 
     private ArrayList<Card> cards;
-
+//constructor => create all cards
     public Deck() {
         cards = new ArrayList<>();
         String[] suits = {"Hearts", "Spades", "Diamonds", "Clubs"};
